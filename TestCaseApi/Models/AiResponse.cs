@@ -7,6 +7,9 @@ public class AiResponse
     [JsonPropertyName("model_used")]
     public string ModelUsed { get; set; } = string.Empty;
 
+    [JsonPropertyName("metrics")]
+    public Metrics? Metrics { get; set; }
+
     [JsonPropertyName("result")]
     public AiResult? Result { get; set; }
 
