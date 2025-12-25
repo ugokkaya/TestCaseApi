@@ -145,7 +145,7 @@ public class AiService
             TotalDurationMs = data.Metrics?.TotalDurationMs ?? 0,
             PromptEvalDurationMs = data.Metrics?.PromptEvalDurationMs ?? 0,
             EvalDurationMs = data.Metrics?.EvalDurationMs ?? 0,
-            CreatedAt = DateTime.Now
+            CreatedAt = DateTime.UtcNow
         };
 
         _db.TestCases.Add(entity);

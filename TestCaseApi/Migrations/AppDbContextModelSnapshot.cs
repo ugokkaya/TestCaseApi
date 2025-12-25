@@ -31,9 +31,17 @@ namespace TestCaseApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CompletionTokens")
+                        .HasColumnType("integer")
+                        .HasColumnName("completion_tokens");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
+
+                    b.Property<double>("EvalDurationMs")
+                        .HasColumnType("double precision")
+                        .HasColumnName("eval_duration_ms");
 
                     b.Property<string>("Expected")
                         .IsRequired()
@@ -45,10 +53,22 @@ namespace TestCaseApi.Migrations
                         .HasColumnType("text")
                         .HasColumnName("framework");
 
+                    b.Property<double>("LatencyMs")
+                        .HasColumnType("double precision")
+                        .HasColumnName("latency_ms");
+
                     b.Property<string>("ModelUsed")
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("model_used");
+
+                    b.Property<double>("PromptEvalDurationMs")
+                        .HasColumnType("double precision")
+                        .HasColumnName("prompt_eval_duration_ms");
+
+                    b.Property<int>("PromptTokens")
+                        .HasColumnType("integer")
+                        .HasColumnName("prompt_tokens");
 
                     b.Property<string>("Requirement")
                         .IsRequired()
@@ -69,6 +89,14 @@ namespace TestCaseApi.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("title");
+
+                    b.Property<double>("TotalDurationMs")
+                        .HasColumnType("double precision")
+                        .HasColumnName("total_duration_ms");
+
+                    b.Property<int>("TotalTokens")
+                        .HasColumnType("integer")
+                        .HasColumnName("total_tokens");
 
                     b.HasKey("Id");
 
