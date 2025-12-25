@@ -138,6 +138,13 @@ public class AiService
             Framework = request.Framework,
             ModelUsed = modelUsed,
             ScriptCode = System.Text.Json.JsonSerializer.Serialize(scriptCode),
+            LatencyMs = data.Metrics?.LatencyMs ?? 0,
+            PromptTokens = data.Metrics?.PromptTokens ?? 0,
+            CompletionTokens = data.Metrics?.CompletionTokens ?? 0,
+            TotalTokens = data.Metrics?.TotalTokens ?? 0,
+            TotalDurationMs = data.Metrics?.TotalDurationMs ?? 0,
+            PromptEvalDurationMs = data.Metrics?.PromptEvalDurationMs ?? 0,
+            EvalDurationMs = data.Metrics?.EvalDurationMs ?? 0,
             CreatedAt = DateTime.UtcNow
         };
 

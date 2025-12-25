@@ -31,6 +31,27 @@ public class TestCaseEntity
     [Column("script_code")]
     public string ScriptCode { get; set; } = string.Empty;
 
+    [Column("latency_ms")]
+    public double LatencyMs { get; set; }
+
+    [Column("prompt_tokens")]
+    public int PromptTokens { get; set; }
+
+    [Column("completion_tokens")]
+    public int CompletionTokens { get; set; }
+
+    [Column("total_tokens")]
+    public int TotalTokens { get; set; }
+
+    [Column("total_duration_ms")]
+    public double TotalDurationMs { get; set; }
+
+    [Column("prompt_eval_duration_ms")]
+    public double PromptEvalDurationMs { get; set; }
+
+    [Column("eval_duration_ms")]
+    public double EvalDurationMs { get; set; }
+
     [Column("created_at")]
     public DateTime CreatedAt { get; set; } = DateTime.Now;
 }
